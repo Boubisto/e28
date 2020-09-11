@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="game.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="game.js" defer></script>
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+
+    <div id="playerChoice">
+        <label for="rock"><input type="radio" value="rock" name="yourHand" checked> Rock</label>
+        <label for="paper"><input type="radio" value="paper" name="yourHand"> Paper</label>
+        <label for="scissors"><input type="radio" value="scissors" name="yourHand"> Scissors</label>
+    </div>
+
+    <br>
+    <button id="playBtn">Play!</button>
+    <br>
+
+    <div id="computerChoice">
+        The Computer hand is <span id="computerHand"></span>.
+        <div id="winHand" class="message">You won! but just for this time ^^</div>
+        <div id="loseHand" class="message">You lost! Maybe next time </div>
+        <div id="drawHand" class="message">It is a draw! Try again at your own risk</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true
+}

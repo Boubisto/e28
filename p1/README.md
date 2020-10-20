@@ -1,6 +1,6 @@
 # Project 1
 + By: Aboubacar Bah
-+ Production URL: <http://e28p1.yourdomain.com>
++ Production URL: <http://e28p1.boubisto.com>
 
 ## Outside resources
 n/a

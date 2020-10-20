@@ -2,14 +2,73 @@
 <html lang='en'>
 
 <head>
-    <title>Example</title>
+    <title>My Project e28p1</title>
     <meta charset='utf-8'>
-    <script src="example.js" defer></script>
+    <link href=data:, rel=icon>
 
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
+    <script src='index.js' defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .winner {
+            background-color: green;
+        }
+
+        .loser {
+            background-color: red;
+        }
+        button {
+           margin: 10px; 
+        }
+    </style>
 </head>
-
 <body>
- <h1>My Project e28p1</h1>
+    <script type='text/x-template' id='round-detail'>
+        <div v-bind:class="{ winner : winner == 'You won! but just for this time ^^', loser : winner == 'You lost! Maybe next time'}">
+            <ul>
+                <li>Round #: {{ number }}</li>
+                <li>Winner: {{ winner }}</li>
+                <li><slot name='choice'></slot></li>
+                <li><slot name='hand'></slot></li>
+                <li><slot name='playerpoints'></slot></li>
+                <li><slot name='computerpoints'></slot></li>
+            </ul>
+            <button @click="$emit('delete-round', number)">Delete round</button>
+        </div>
+    </script>
+
+    <h1>Rock, Paper, Scissors</h1>
+
+    <div id='app' v-cloak>
+        <div>
+            <label><input type='radio' value='rock' v-model='choice'> Rock</label>
+            <label><input type='radio' value='paper' v-model='choice'> Paper</label>
+            <label><input type='radio' value='scissors' v-model='choice'> Scissors</label>
+
+        </div>
+
+        <button id='playBtn' @click='play'>Play!</button>
+        <button @click="reset" >Reset Score</button>
+
+
+        <round-detail v-for='round in rounds' @delete-round='deleteRound($event)' :number='round.number'
+            :winner='round.winner' :key='round.number' :computerscore='round.computerscore' :playerscore='round.playerscore'>
+
+            <template #choice>You chose {{ round.choice }}</template>
+
+            <template #hand>The Computer chose {{ round.hand }}</template>
+
+            <template #playerpoints> Your Score: {{ round.playerpoints }}</template>
+
+            <template #computerpoints> Computer Score: {{ round.computerpoints }}</template>
+
+
+        </round-detail>
+    </div>
 
 </body>
 

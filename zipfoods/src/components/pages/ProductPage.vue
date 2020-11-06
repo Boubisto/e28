@@ -14,27 +14,24 @@
 
 <script>
 import ShowProduct from "@/components/ShowProduct.vue";
-import { products } from "@/products.js";
 export default {
   name: "",
-  props: ["id"],
+  props: ["id", "products"],
   components: {
     "show-product": ShowProduct,
   },
   data() {
-    return {
-      product: null,
-      products: products,
-      productNotFound: false,
-    };
+    return {};
   },
-  mounted() {
-    this.product = this.products.filter((product) => {
-      return product.id == this.id;
-    }, this.id)[0];
-    if (this.product == null) {
-      this.productNotFound = true;
-    }
+  computed: {
+    product() {
+      return this.products.filter((product) => {
+        return product.id == this.id;
+      }, this.id)[0];
+    },
+    productNotFound() {
+      return this.product == null;
+    },
   },
 };
 </script>

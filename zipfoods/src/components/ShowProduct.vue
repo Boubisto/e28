@@ -1,11 +1,7 @@
-<!-- src/components/ShowProduct.vue -->
 <template>
   <div class="product">
     <div class="product-name">{{ product.name }}</div>
-    <img
-      class="product-thumb"
-      v-bind:src="require('@/assets/images/products/' + product.id + '.jpg')"
-    />
+    <img class="product-thumb" v-bind:src="imageSource" />
 
     <p class="description" v-if="includeDetails">
       {{ product.description }}
@@ -20,6 +16,15 @@ export default {
   props: ["product", "includeDetails"],
   data: function () {
     return {};
+  },
+  computed: {
+    imageSource() {
+      try {
+        return require("@/assets/images/products/" + this.product.id + ".jpg");
+      } catch (e) {
+        return require("@/assets/images/products/image-not-available.jpg");
+      }
+    },
   },
 };
 </script>

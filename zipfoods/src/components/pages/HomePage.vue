@@ -1,4 +1,3 @@
-<!-- src/components/ShowProduct.vue -->
 <template>
   <div>
     <p>
@@ -12,7 +11,6 @@
 
 <script>
 import ShowFeatured from "@/components/ShowFeatured.vue";
-
 export default {
   name: "",
   components: {

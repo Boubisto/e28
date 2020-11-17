@@ -3,15 +3,16 @@
 + Production URL: <http://e28p2.boubisto.com>
 
 ## Pages summary
-* HomePage that shows all recipes
-* ShowRecipe that shows individual recipes
+* RecipesPage that shows all recipes
+* RecipePage that show specific recipe
+* CreateRecipe that add a new recipe
 
 
 ## SFC summary
-*List the SFCs of your application*
+* ShowRecipe and ShowOverview
   
 ## Server interaction
-*List the features in your application that are persisting and retrieving data from the server*
+* Reading and Creating
 
 ## Outside resources
 Inspired from Hello Fresh and google images

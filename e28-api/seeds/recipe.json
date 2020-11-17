@@ -10,7 +10,7 @@
             "calorie":800,
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Milk",
+            "allergens":"Milk",
             "utensil": "small pot, paper towel, small bowl, strainer, zester, plastic wrap, pan"
         },
         {
@@ -23,7 +23,7 @@
             "calorie":910,
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Milk",
+            "allergens":"Milk",
             "utensil": "peeler,baking sheet, bowl, pan"
         },
         {
@@ -36,7 +36,7 @@
             "calorie":910,
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Milk",
+            "allergens":"Milk",
             "utensil": "peeler,bowl, strainer, zester, pan, pot"
         },
         {
@@ -49,7 +49,7 @@
             "calorie":"Easy",
             "perishable": true,
             "difficulty":"Easy",
-            "allergen":"Milk, Wheat",
+            "allergens":"Milk, Wheat",
             "utensil": "pot, pan, strainer"
         },
         {
@@ -62,7 +62,7 @@
             "calorie": 940,
             "perishable": true,
             "difficulty":"Easy",
-            "allergen":"Milk, Eggs, Wheat, Soy",
+            "allergens":"Milk, Eggs, Wheat, Soy",
             "utensil": "bowl, pan, baking sheet"
         },
         {
@@ -75,7 +75,7 @@
             "calorie":820,
             "perishable": true,
             "difficulty":"Easy",
-            "allergen":"Wheat, Milk, Soy",
+            "allergens":"Wheat, Milk, Soy",
             "utensil": "peeler,pot, bowl"
         },
         {
@@ -88,7 +88,7 @@
             "calorie":650,
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Fish, Soy, wheat, Milk",
+            "allergens":"Fish, Soy, wheat, Milk",
             "utensil": "pot, bowl, pan"
         },
         {
@@ -101,7 +101,7 @@
             "calorie":910,
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Milk",
+            "allergens":"Milk",
             "utensil": "aliminum foil,strainer, pot, bowl ,pan"
         },
         {
@@ -114,7 +114,7 @@
             "calorie":"650",
             "perishable": true,
             "difficulty":"Easy",
-            "allergen":"Shellfish, Wheat. Milk, Soy",
+            "allergens":"Shellfish, Wheat. Milk, Soy",
             "utensil": "bowl, pan, towel"
         },
         {
@@ -127,7 +127,7 @@
             "calorie":"800",
             "perishable": true,
             "difficulty":"Medium",
-            "allergen":"Wheat, Milk",
+            "allergens":"Wheat, Milk",
             "utensil": "bowl, pan, masher, pan, baking dish"
         }
     ]

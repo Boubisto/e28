@@ -1,8 +1,28 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from 'vue-router';
+
+import HomePage from '@/components/pages/HomePage.vue';
+import RecipesPage from '@/components/pages/RecipesPage.vue';
+import RecipePage from '@/components/pages/RecipePage.vue';
+import AllergensPage from '@/components/pages/AllergensPage.vue';
+
 
 Vue.config.productionTip = false
 
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: [
+      { path: '/', component: HomePage },
+      { path: '/recipes', component: RecipesPage },
+      { path: '/allergens', component: AllergensPage },
+      { path: '/recipes/:id', component: RecipePage, props: true },
+  ],
+  mode: 'history',
+})
+
 new Vue({
-  render: h => h(App),
+    router: router,
+    render: h => h(App),
 }).$mount('#app')

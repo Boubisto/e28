@@ -11,7 +11,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Milk",
-            "utensil": "small pot, paper towel, small bowl, strainer, zester, plastic wrap, pan"
+            "ustensil": "small pot, paper towel, small bowl, strainer, zester, plastic wrap, pan"
         },
         {
             "name": "Bavette Steak in a Mushroom Sauce",
@@ -24,7 +24,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Milk",
-            "utensil": "peeler,baking sheet, bowl, pan"
+            "ustensil": "peeler,baking sheet, bowl, pan"
         },
         {
             "name": "Crunchy Curried Chickpea Bowls",
@@ -37,7 +37,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Milk",
-            "utensil": "peeler,bowl, strainer, zester, pan, pot"
+            "ustensil": "peeler,bowl, strainer, zester, pan, pot"
         },
         {
             "name": "Chicken Sausage Rigatoni",
@@ -50,7 +50,7 @@
             "perishable": true,
             "difficulty":"Easy",
             "allergens":"Milk, Wheat",
-            "utensil": "pot, pan, strainer"
+            "ustensil": "pot, pan, strainer"
         },
         {
             "name": "El Paso Beef Burgers",
@@ -63,7 +63,7 @@
             "perishable": true,
             "difficulty":"Easy",
             "allergens":"Milk, Eggs, Wheat, Soy",
-            "utensil": "bowl, pan, baking sheet"
+            "ustensil": "bowl, pan, baking sheet"
         },
         {
             "name": "Italian Noodle Soup",
@@ -76,7 +76,7 @@
             "perishable": true,
             "difficulty":"Easy",
             "allergens":"Wheat, Milk, Soy",
-            "utensil": "peeler,pot, bowl"
+            "ustensil": "peeler,pot, bowl"
         },
         {
             "name": "Tilapia with Scallion Sriracha Pesto",
@@ -89,7 +89,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Fish, Soy, wheat, Milk",
-            "utensil": "pot, bowl, pan"
+            "ustensil": "pot, bowl, pan"
         },
         {
             "name": "Bayou Blackened Chicken Legs",
@@ -102,7 +102,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Milk",
-            "utensil": "aliminum foil,strainer, pot, bowl ,pan"
+            "ustensil": "aliminum foil,strainer, pot, bowl ,pan"
         },
         {
             "name": "Cantina Shrimp Fajitas",
@@ -114,8 +114,8 @@
             "calorie":"650",
             "perishable": true,
             "difficulty":"Easy",
-            "allergens":"Shellfish, Wheat. Milk, Soy",
-            "utensil": "bowl, pan, towel"
+            "allergens":"Shellfish, Wheat, Milk, Soy",
+            "ustensil": "bowl, pan, towel"
         },
         {
             "name": "Salsa Verde Enchiladas",
@@ -128,7 +128,7 @@
             "perishable": true,
             "difficulty":"Medium",
             "allergens":"Wheat, Milk",
-            "utensil": "bowl, pan, masher, pan, baking dish"
+            "ustensil": "bowl, pan, masher, pan, baking dish"
         }
     ]
 }

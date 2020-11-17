@@ -70,7 +70,7 @@
             "type": "string",
             "validators": []
         },
-        "utensil": {
+        "ustensil": {
             "type": "string",
             "validators": []
         }

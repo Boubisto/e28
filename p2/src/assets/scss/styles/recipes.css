@@ -1,3 +1,93 @@
 h1 {
     color: red;
 }
+
+nav {
+    font-size: x-large;
+}
+
+body {
+    background-color: greenyellow;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: orange;
+    background-color: white;
+    border-style: solid;
+    border-color: orange;
+    border-width: thick;
+}
+
+.recipe {
+    border-style: solid;
+    border-color: orange;
+    border-width: 3px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    padding-left: 0px;
+}
+
+p.recipe {
+    clear: right;
+    overflow: auto;
+}
+
+.recipe-name {
+    color: orange;
+    font-weight: 900;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+.recipe-description {
+    color: blue;
+    font-weight: 900;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+a:hover {
+    color: wheat;
+}
+
+
+a:visited {
+    color: green;
+}
+
+a:active {
+    color: yellow;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+img {
+    border-style: solid;
+    border-color: orange;
+    border-width: medium;
+    padding: 5px;
+    float: right;
+}
+
+.recipe {
+    clear: right;
+    overflow: auto;
+}

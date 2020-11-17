@@ -15,7 +15,7 @@
 <script>
 export default {
   name: "show-overview",
-  props: ["allergen"],
+  props: ["recipe", "allergen"],
   data: function () {
     return {};
   },

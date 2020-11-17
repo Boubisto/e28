@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="@/assets/images/logo.png" />
+    <img alt="Vue logo" src="@/assets/images/logo2.png" />
     <nav>
       <ul>
         <li>
@@ -29,13 +29,12 @@ export default {
   data() {
     return {
       recipes: [],
-      /* Store links in an array to maintain order */
-      links: ["home", "recipes", "allergens"],
-      /* Map links to the appropriate component */
+      links: ["Recipes", "Allergens", "Add a new Recipe"],
       paths: {
         home: "/",
-        recipes: "/recipes",
-        allergens: "/allergens",
+        Recipes: "/recipes",
+        Allergens: "/allergens",
+        "Add a new Recipe": "/recipes/new",
       },
     };
   },

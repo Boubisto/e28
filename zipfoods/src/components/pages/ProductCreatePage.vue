@@ -53,7 +53,7 @@ export default {
     };
   },
   methods: {
-    addProduct() {
+    addProduct() { 
       axios.post("/product", this.product).then((response) => {
         if (response.data.errors) {
           this.errors = response.data.errors;

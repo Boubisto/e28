@@ -1,4 +1,80 @@
 {
+    "recipe": {
+        "name": {
+            "type": "string",
+            "validators": [
+                "required",
+                "min:5",
+                "max:50"
+            ]
+        },
+        "ingredient": {
+            "type": "text",
+            "validators": [
+                "required",
+                "min:5",
+                "max:100"
+                ]
+            },
+        "sku": {
+            "type": "string",
+            "validators": [
+                "required",
+                "min:3",
+                "max:100",
+                "unique",
+                "alpha_dash"
+            ]
+        },
+        "description": {
+            "type": "text",
+            "validators": [
+                "required",
+                "min:5"
+            ]
+        },
+        "instruction": {
+            "type": "text",
+            "validators": [
+                "required",
+                "min:10"
+            ]
+        },
+        "time": {
+            "type": "integer",
+            "validators": [
+                "required",
+                "numeric"
+            ]
+        },
+        "calorie": {
+            "type": "integer",
+            "validators": [
+                "required",
+                "numeric"
+            ]
+        },
+        "perishable": {
+            "type": "boolean",
+            "validators": [
+                "required"
+            ]
+        },
+        "difficulty": {
+            "type": "string",
+            "validators": [
+                "required"
+            ]
+        },
+        "allergen": {
+            "type": "string",
+            "validators": []
+        },
+        "utensil": {
+            "type": "string",
+            "validators": []
+        }
+    },
     "product": {
         "name": {
             "type": "string",
@@ -58,6 +134,13 @@
         }
     },
     "favorite": {
+        "recipe_id": {
+            "type": "integer",
+            "validators": [
+                "required",
+                "numeric"
+            ]
+        },
         "product_id": {
             "type": "integer",
             "validators": [

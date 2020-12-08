@@ -1,12 +1,12 @@
 {
     "seeds": [
         {
-            "name": "Bouba Diallo",
+            "name": "Bouba",
             "email": "boubssonne@gmail.com",
             "password": "asdfasdf"
         },
         {
-            "name": "Aboush Bah",
+            "name": "Aboush",
             "email": "leidybouba@gmail.com",
             "password": "asdfasdf"
         }

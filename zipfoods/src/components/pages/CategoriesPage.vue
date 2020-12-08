@@ -12,18 +12,23 @@
 <script>
 export default {
   name: "",
-  props: ["products"],
+  props: [],
   data: function () {
     return {};
   },
   computed: {
     categories() {
-      let categories = this.products.map((product) =>
-        product.categories.split(",")
-      );
+      let categories = this.products.map((product) => {
+        if (product.categories) {
+          return product.categories.split(",");
+        }
+      });
       let mergedCategories = [].concat.apply([], categories);
       // Return unique, sorted categories
       return [...new Set(mergedCategories)].sort();
+    },
+    products() {
+      return this.$store.state.products;
     },
   },
 };

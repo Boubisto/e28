@@ -2,6 +2,12 @@
   <div id="product-page">
     <div v-if="product">
       <show-product :product="product" :includeDetails="true"></show-product>
+
+      <button v-on:click="addToCart">Add to Cart</button>
+
+      <transition name="fade">
+        <div class="alert" v-if="addAlert">Your cart has been updated!</div>
+      </transition>
     </div>
 
     <div v-if="productNotFound">
@@ -14,23 +20,35 @@
 
 <script>
 import ShowProduct from "@/components/ShowProduct.vue";
+import { cart } from "@/common/app.js";
 export default {
   name: "",
-  props: ["id", "products"],
+  props: ["id"],
   components: {
     "show-product": ShowProduct,
   },
   data() {
-    return {};
+    return {
+      addAlert: false,
+    };
   },
   computed: {
     product() {
-      return this.products.filter((product) => {
-        return product.id == this.id;
-      }, this.id)[0];
+      return this.$store.getters.getProductById(this.id);
     },
     productNotFound() {
       return this.product == null;
+    },
+    products() {
+      return this.$store.state.products;
+    },
+  },
+  methods: {
+    addToCart() {
+      cart.add(this.product.id, 1);
+      this.$store.commit("setCartCount", cart.count());
+      this.addAlert = true;
+      setTimeout(() => (this.addAlert = false), 2000);
     },
   },
 };

@@ -57,8 +57,6 @@ const router = new VueRouter({
 // Ref: https://router.vuejs.org/guide/advanced/navigation-guards.html
 router.beforeEach(async (to, from, next) => {
 
-    // Exact the meta information from our routes
-    // Ref: https://router.vuejs.org/guide/advanced/meta.html#route-meta-fields
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
     const decide = () => {
@@ -69,7 +67,7 @@ router.beforeEach(async (to, from, next) => {
             next();
         }
     }
-
+    
     // If we don't have the user yet, dispatch our Vuex authUser action
     if (store.state.user === null) {
         store.dispatch('authUser').then(() => {
@@ -78,6 +76,7 @@ router.beforeEach(async (to, from, next) => {
     } else {
         decide();
     }
+
 });
 
 export default router;

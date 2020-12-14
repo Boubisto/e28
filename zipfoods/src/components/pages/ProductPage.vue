@@ -3,11 +3,19 @@
     <div v-if="product">
       <show-product :product="product" :includeDetails="true"></show-product>
 
-      <button data-test="add-to-cart-button" v-on:click="addToCart">Add to Cart</button>
+      <button data-test="add-to-cart-button" v-on:click="addToCart">
+        Add to Cart
+      </button>
 
       <transition name="fade">
         <div class="alert" v-if="addAlert">Your cart has been updated!</div>
       </transition>
+    </div>
+    <div v-if="user">
+      <button v-if="isFavorite" @click="removeFromFavorites()">
+        Remove from favorites
+      </button>
+      <button v-else @click="addToFavorites()">❤ Add to favorites</button>
     </div>
 
     <div v-if="productNotFound">
@@ -20,8 +28,18 @@
 
 <script>
 import ShowProduct from "@/components/ShowProduct.vue";
+import useFavorite from "@/features/useFavorite";
 import { cart } from "@/common/app.js";
 export default {
+  setup(props) {
+    // Here we use JS's "destructuring assignment" to capture the returned variables from useFavorite
+    const { isFavorite, addToFavorites, removeFromFavorites } = useFavorite(
+      props.id
+    );
+
+    // Don't forget to return any of the variables you want to use in the component
+    return { isFavorite, addToFavorites, removeFromFavorites };
+  },
   name: "",
   props: ["id"],
   components: {
@@ -41,6 +59,9 @@ export default {
     },
     products() {
       return this.$store.state.products;
+    },
+    user() {
+      return this.$store.state.user;
     },
   },
   methods: {

@@ -55,7 +55,7 @@ export default {
       // Form is prefilled for demonstration purposes; remove in final application
       // jill@harvard.edu/asdfasdf is one of our seed users from e28-api/seeds/user.json
       data: {
-        email: "jill@harvard.edu",
+        email: "boubssonne@gmail.com",
         password: "asdfasdf",
       },
       errors: null,

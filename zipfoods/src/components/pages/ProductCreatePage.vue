@@ -6,7 +6,12 @@
 
     <div id="inputs">
       <label for="name">* Name</label>
-      <input type="text" v-model="product.name" id="name" />
+      <input
+        type="text"
+        v-model="product.name"
+        id="name"
+        v-on:blur="validate()"
+      />
       <small class="form-help">Min: 3, Max: 100</small>
       <error-field
         v-if="errors && 'name' in errors"
@@ -14,7 +19,12 @@
       ></error-field>
 
       <label for="sku">* SKU:</label>
-      <input type="text" v-model="product.sku" id="sku" />
+      <input
+        type="text"
+        v-model="product.sku"
+        id="sku"
+        v-on:blur="validate()"
+      />
       <small class="form-help"
         >Min: 3, Max: 100. Letters and dashes only.</small
       >
@@ -24,7 +34,12 @@
       ></error-field>
 
       <label for="price">* Price:</label>
-      <input type="text" v-model="product.price" id="price" />
+      <input
+        type="text"
+        v-model="product.price"
+        id="price"
+        v-on:blur="validate()"
+      />
       <small class="form-help">Enter a decimal value number</small>
       <error-field
         v-if="errors && 'price' in errors"
@@ -32,7 +47,12 @@
       ></error-field>
 
       <label for="available">* Quantity available:</label>
-      <input type="text" v-model="product.available" id="available" />
+      <input
+        type="text"
+        v-model="product.available"
+        id="available"
+        v-on:blur="validate()"
+      />
       <small class="form-help">Enter a whole number</small>
       <error-field
         v-if="errors && 'available' in errors"
@@ -40,19 +60,33 @@
       ></error-field>
 
       <label for="weight">* Weight (in lbs):</label>
-      <input type="text" v-model="product.weight" id="weight" />
+      <input
+        type="text"
+        v-model="product.weight"
+        id="weight"
+        v-on:blur="validate()"
+      />
       <error-field
         v-if="errors && 'weight' in errors"
         :errors="errors.weight"
       ></error-field>
 
       <label for="perishable" class="form-checkbox-label">
-        <input type="checkbox" v-model="product.perishable" id="perishable" />
+        <input
+          type="checkbox"
+          v-model="product.perishable"
+          id="perishable"
+          v-on:blur="validate()"
+        />
         Perishable?
       </label>
 
       <label for="description">* Description</label>
-      <textarea v-model="product.description" id="description"></textarea>
+      <textarea
+        v-model="product.description"
+        id="description"
+        v-on:blur="validate()"
+      ></textarea>
       <small class="form-help">Min:100 </small>
       <error-field
         v-if="errors && 'description' in errors"
@@ -81,6 +115,7 @@
 <script>
 import { axios } from "@/common/app.js";
 import ErrorField from "@/components/ErrorField.vue";
+import Validator from "validatorjs";
 export default {
   components: {
     "error-field": ErrorField,
@@ -102,26 +137,42 @@ export default {
     };
   },
   methods: {
-    addProduct() {
-      axios.post("/product", this.product).then((response) => {
-        if (response.data.errors) {
-          this.errors = response.data.errors;
-        } else {
-          this.$store.dispatch("fetchProducts");
-          this.showConfirmationMessage = true;
-          this.addedName = this.product.name;
-          setTimeout(() => (this.showConfirmationMessage = false), 3000);
-          this.product = {
-            name: "",
-            slug: "",
-            price: "",
-            available: "",
-            weight: "",
-            perishable: false,
-            description: "",
-          };
-        }
+    validate() {
+      let validator = new Validator(this.product, {
+        name: "required|between:3,100",
+        sku: "required|between:3,100|alpha_dash",
+        price: "required|numeric",
+        available: "required|numeric",
+        weight: "required|numeric",
+        description: "required|min:100",
       });
+
+      this.errors = validator.errors.all();
+
+      return validator.passes();
+    },
+    addProduct() {
+      if (this.errors.length == 0) {
+        axios.post("/product", this.product).then((response) => {
+          if (response.data.errors) {
+            this.errors = response.data.errors;
+          } else {
+            this.$store.dispatch("fetchProducts");
+            this.showConfirmationMessage = true;
+            this.addedName = this.product.name;
+            setTimeout(() => (this.showConfirmationMessage = false), 3000);
+            this.product = {
+              name: "",
+              slug: "",
+              price: "",
+              available: "",
+              weight: "",
+              perishable: false,
+              description: "",
+            };
+          }
+        });
+      }
     },
   },
 };

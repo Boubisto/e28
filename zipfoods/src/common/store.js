@@ -35,7 +35,7 @@ export default new Vuex.Store({
                     } else {
                         context.commit('setUser', false);
                     }
-        
+
                     resolve();
                 });
             });

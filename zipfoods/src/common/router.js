@@ -37,7 +37,6 @@ const routes = [
     {
         path: '/cart',
         component: () => import('@/components/pages/CartPage.vue'),
-        
     },
     {
         // This is a route we can direct the user to if they try to access a part of the site they don't have privileges for
@@ -53,8 +52,6 @@ const router = new VueRouter({
     mode: 'history'
 })
 
-// beforeEach provides a way to execute some code before a route is resolved
-// Ref: https://router.vuejs.org/guide/advanced/navigation-guards.html
 router.beforeEach(async (to, from, next) => {
 
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
@@ -67,7 +64,7 @@ router.beforeEach(async (to, from, next) => {
             next();
         }
     }
-    
+
     // If we don't have the user yet, dispatch our Vuex authUser action
     if (store.state.user === null) {
         store.dispatch('authUser').then(() => {
@@ -78,5 +75,6 @@ router.beforeEach(async (to, from, next) => {
     }
 
 });
+
 
 export default router;

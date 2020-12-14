@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <div class="product-name">{{ product.name }}</div>
+    <div class="product-name" data-test="product-name">{{ product.name }}</div>
     <img class="product-thumb" v-bind:src="imageSource" />
 
     <p class="description" v-if="includeDetails">

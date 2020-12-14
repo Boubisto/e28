@@ -3,7 +3,7 @@
     <div v-if="product">
       <show-product :product="product" :includeDetails="true"></show-product>
 
-      <button v-on:click="addToCart">Add to Cart</button>
+      <button data-test="add-to-cart-button" v-on:click="addToCart">Add to Cart</button>
 
       <transition name="fade">
         <div class="alert" v-if="addAlert">Your cart has been updated!</div>

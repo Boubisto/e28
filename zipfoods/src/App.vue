@@ -15,7 +15,9 @@
             v-bind:to="paths[link]"
             exact
           >
-            <span v-if="link == 'cart'">({{ cartCount }})</span>
+            <span data-test="cart-count" v-if="link == 'cart'"
+              >({{ cartCount }})</span
+            >
             {{ link }}
           </router-link>
         </li>
@@ -56,7 +58,6 @@ export default {
   mounted() {
     this.$store.dispatch("fetchProducts");
     this.$store.commit("setCartCount", cart.count());
-    this.$store.dispatch("authUser");
   },
   computed: {
     cartCount() {

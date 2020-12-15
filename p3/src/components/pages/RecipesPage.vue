@@ -3,6 +3,7 @@
     <h1>Recipes</h1>
 
     <router-link
+    data-test="recipe-link"
       v-for="recipe in recipes"
       :key="recipe.id"
       v-bind:to="'/recipes/' + recipe.id"

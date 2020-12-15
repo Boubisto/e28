@@ -2,7 +2,11 @@
   <div>
     <h1>Allergens</h1>
     <ul class="cleanList">
-      <li v-for="(allergen, id) in allergens" :key="id">
+      <li
+        data-test="recipe-allergen"
+        v-for="(allergen, id) in allergens"
+        :key="id"
+      >
         {{ allergen }}
       </li>
     </ul>

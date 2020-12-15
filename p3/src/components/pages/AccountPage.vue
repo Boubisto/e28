@@ -51,15 +51,15 @@ export default {
   data() {
     return {
       data: {
-        email: "",
-        password: "",
+        email: "boubssonne@gmail.com",
+        password: "asdfasdf",
       },
       errors: null,
       favorites: [],
     };
   },
   computed: {
-    // Get our user and products state from the Vuex store
+    // Get our user and recipes state from the Vuex store
     user() {
       return this.$store.state.user;
     },

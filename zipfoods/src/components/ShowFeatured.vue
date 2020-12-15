@@ -1,3 +1,4 @@
+<!-- src/components/ShowFeatured.vue -->
 <template>
   <div id="featured">
     <h2>Featured Products</h2>

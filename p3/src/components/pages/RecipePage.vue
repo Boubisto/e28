@@ -12,13 +12,6 @@
       </transition>
     </div>
 
-    <div v-if="user">
-      <button v-if="isFavorite" @click="removeFromFavorites()">
-        Remove from favorites
-      </button>
-      <button v-else @click="addToFavorites()">❤ Add to favorites</button>
-    </div>
-
     <div v-if="recipeNotFound">
       <p>Recipe {{ id }} was not found.</p>
 
@@ -32,7 +25,6 @@
 <script>
 import ShowRecipe from "@/components/ShowRecipe.vue";
 import { cart } from "@/common/app.js";
-
 export default {
   name: "",
   props: ["id"],

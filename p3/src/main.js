@@ -6,6 +6,7 @@ import router from '@/common/router.js'
 
 import store from '@/common/store.js';
 
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);

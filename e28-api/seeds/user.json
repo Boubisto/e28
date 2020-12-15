@@ -9,6 +9,11 @@
             "name": "Aboush",
             "email": "leidybouba@gmail.com",
             "password": "asdfasdf"
+        },
+        {
+            "name": "Leidy",
+            "email": "leidy@gmail.com",
+            "password": "asdfasdf"
         }
     ]
 }

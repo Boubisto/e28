@@ -16,20 +16,22 @@
 
     <div v-else id="loginForm">
       <h2>Login</h2>
+
       <div>
-        <label
-          >Email:
-          <input type="text" data-test="email-input" v-model="data.email"
-        /></label>
+        <label>
+          Email:
+          <input type="text" data-test="email-input" v-model="data.email" />
+        </label>
       </div>
       <div>
-        <label
-          >Password:
+        <label>
+          Password:
           <input
             type="password"
             data-test="password-input"
             v-model="data.password"
-        /></label>
+          />
+        </label>
       </div>
 
       <button @click="login" data-test="login-button">Login</button>
@@ -57,7 +59,7 @@ export default {
     };
   },
   computed: {
-    // Get our user and recipes state from the Vuex store
+    // Get our user and products state from the Vuex store
     user() {
       return this.$store.state.user;
     },
